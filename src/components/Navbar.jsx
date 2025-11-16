@@ -5,7 +5,7 @@ const NavLink = ({ href, children, onClick }) => (
   <a
     href={href}
     onClick={onClick}
-    className="text-sm md:text-base text-slate-600 hover:text-slate-900 transition-colors px-3 py-2 rounded-md hover:bg-slate-100"
+    className="text-sm md:text-base text-slate-300 hover:text-white transition-colors px-3 py-2 rounded-md hover:bg-white/5"
   >
     {children}
   </a>
@@ -22,28 +22,28 @@ export default function Navbar() {
   }, [])
 
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? 'backdrop-blur-md bg-white/70 shadow-sm' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? 'backdrop-blur-md bg-slate-950/70 border-b border-slate-800' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="font-semibold text-slate-900 tracking-tight text-lg">
-            <span className="bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">MyPortfolio</span>
+          <a href="#home" className="font-semibold tracking-tight text-lg">
+            <span className="bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">MyPortfolio</span>
           </a>
           <div className="hidden md:flex items-center gap-1">
             <NavLink href="#projects">Projects</NavLink>
             <NavLink href="#about">About</NavLink>
             <NavLink href="#contact">Contact</NavLink>
-            <div className="w-px h-5 bg-slate-200 mx-2" />
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-slate-100 rounded-md text-slate-600 hover:text-slate-900">
+            <div className="w-px h-5 bg-slate-800 mx-2" />
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-white/5 rounded-md text-slate-300 hover:text-white">
               <Github size={18} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-slate-100 rounded-md text-slate-600 hover:text-slate-900">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-2 hover:bg-white/5 rounded-md text-slate-300 hover:text-white">
               <Linkedin size={18} />
             </a>
-            <a href="#contact" className="p-2 hover:bg-slate-100 rounded-md text-slate-600 hover:text-slate-900">
+            <a href="#contact" className="p-2 hover:bg-white/5 rounded-md text-slate-300 hover:text-white">
               <Mail size={18} />
             </a>
           </div>
-          <button className="md:hidden p-2 rounded-md hover:bg-slate-100" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+          <button className="md:hidden p-2 rounded-md hover:bg-white/5" onClick={() => setOpen(!open)} aria-label="Toggle menu">
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
